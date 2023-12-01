@@ -15,7 +15,7 @@ jobs:
 
     - name: Zip project directory
       run: |
-        zip -r release.zip . -x '*.git*'
+        zip -r release.zip . -x '*.git*' -x 'test/*'
 
     - name: Create Release
       id: create_release
