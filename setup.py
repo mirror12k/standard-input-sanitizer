@@ -7,7 +7,7 @@ setup(
   description = 'Recursive input sanitizer',
   author = 'mirror12k',
   url = 'https://github.com/mirror12k/standard-input-sanitizer',
-  download_url = 'https://github.com/mirror12k/standard-input-sanitizer/archive/v_01.tar.gz',
+  download_url = 'https://github.com/mirror12k/standard-input-sanitizer/releases/latest/download/release.zip',
   keywords = ['sanitizer', 'xss', 'sqli', 'log4j'],
   install_requires=[],
   classifiers=[
