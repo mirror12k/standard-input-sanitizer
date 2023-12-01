@@ -1,0 +1,1 @@
+from standard_input_sanitizer.sanitize_input import sanitize_input

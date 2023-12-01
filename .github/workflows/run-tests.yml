@@ -1,0 +1,32 @@
+name: Python Unit Tests
+
+on: [push]
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install testing dependencies
+      run: pip install coverage unittest-xml-reporting
+    - name: Run unit tests
+      run: python -u test/unit_test.py
+
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()    # run this step even if previous step failed
+      with:
+        name: Unit Tests            # Name of the check run which will be created
+        path: "xml-test-reports/*"    # Path to test results
+        reporter: java-junit        # Format of test results

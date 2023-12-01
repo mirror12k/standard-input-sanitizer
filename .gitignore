@@ -1,0 +1,4 @@
+.coverage
+*.pem
+**/__pycache__/*
+xml-test-reports
